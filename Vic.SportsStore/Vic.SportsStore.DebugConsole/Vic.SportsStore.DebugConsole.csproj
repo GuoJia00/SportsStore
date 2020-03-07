@@ -5,11 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2AA0CC50-5462-4EC7-8916-43E299118F89}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vic.SportsStore.Domain</RootNamespace>
-    <AssemblyName>Vic.SportsStore.Domain</AssemblyName>
+    <ProjectGuid>{3DF40A42-4729-409F-AE15-CEE728D5B4F9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Vic.SportsStore.DebugConsole</RootNamespace>
+    <AssemblyName>Vic.SportsStore.DebugConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,6 +16,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +26,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,16 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\EFDbContext.cs" />
-    <Compile Include="Concrete\EFProductsRepository.cs" />
-    <Compile Include="Concrete\InMemoryProductsRepository.cs" />
-    <Compile Include="Abstract\IProductsRepository.cs" />
-    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vic.SportsStore.Domain\Vic.SportsStore.Domain.csproj">
+      <Project>{2aa0cc50-5462-4ec7-8916-43e299118f89}</Project>
+      <Name>Vic.SportsStore.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
