@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vic.SportsStore.Domain.Abstract;
-using Vic.SportsStore.Domain.Abstract.Concrete;
+using Vic.SportsStore.Domain.Concrete;
 
 namespace Vic.SportsStore.WebApp
 {
